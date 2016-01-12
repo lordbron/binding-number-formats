@@ -10,13 +10,26 @@
       }
     }
   },
+  "blueprint_unnamed_retrievedData": {
+    "prototype": "montage/core/meta/property-blueprint",
+    "properties": {
+      "name": "retrievedData",
+      "blueprint": {"@": "root"},
+      "valueType": "object"
+    }
+  },
   "root": {
     "prototype": "montage/core/meta/module-blueprint",
     "properties": {
       "name": null,
       "parent": {"@": "blueprint_component_reference"},
+      "propertyBlueprints": [
+        {"@": "blueprint_unnamed_retrievedData"}
+      ],
       "propertyBlueprintGroups": {
-        "Main": []
+        "Main": [
+          {"@": "blueprint_unnamed_retrievedData"}
+        ]
       },
       "module": {
         "%": "ui/main.reel"
