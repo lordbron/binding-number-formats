@@ -13,14 +13,22 @@
                 "element": {"#": "main"}
             }
         },
-        "text": {
+        "oneWayText": {
             "prototype": "montage/ui/text.reel",
             "properties": {
-                "element": {"#": "text"},
-                "contenteditable": "true",
-                "dir": "ltr",
-                "draggable": "true",
-                "value": "Text"
+                "element": {"#": "oneWayText"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.retrievedData.someValue"}
+            }
+        },
+        "twoWayText": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "twoWayText"}
+            },
+            "bindings": {
+                "value": {"<->": "@owner.retrievedData.someValue"}
             }
         }
     }
@@ -28,7 +36,8 @@
 </head>
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
-        <p data-montage-id="text"></p>
+        <p data-montage-id="oneWayText"></p>
+        <p data-montage-id="twoWayText"></p>
     </div>
 </body>
 </html>
