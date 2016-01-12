@@ -11,6 +11,7 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     enterDocument: {
         value: function (firstTime) {
             if (firstTime) {
+                this.getJSONData();
             }
         }
     },
