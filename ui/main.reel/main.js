@@ -19,15 +19,11 @@ exports.Main = Component.specialize(/** @lends Main# */ {
         value: function () {
             var me = this;
             var xhr = new XMLHttpRequest();
-            var webServicePath = "core/model/data.json";
+            var webServicePath = "core/data.json";
             xhr.open('GET',webServicePath);
             xhr.responseType = 'text';
             xhr.onload = function(event) {
-                if (this.status == 200) {
-                    me.appModel["fieldsData"] = JSON.parse(event.target.response);
-                } else {
-                    alert("No web service call configured yet, but we're sending data to a fake one anyways.");
-                }
+                me.retrievedData = JSON.parse(event.target.response);
             };
             xhr.send();
         }
